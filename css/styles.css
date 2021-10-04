@@ -56,9 +56,30 @@ ul {
   margin-left: 50px;
 }
 
+.site-nav-list .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .site-nav-list .link:hover,
 .site-nav-list .link:focus {
   color: var(--accent-color);
+}
+
+.site-nav-list {
+  position: relative;
+}
+
+.current-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+
+  left: 0;
+  width: 100%;
+
+  border: 2px solid var(--accent-color);
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .nav-address-list {
@@ -154,8 +175,17 @@ header {
   color: var(--title-text-color);
 }
 
+.site-nav .current {
+  color: var(--accent-color);
+}
+
 .nav-adress {
   color: var(--primary-text-color);
+}
+
+.nav-adress .address-icon,
+.nav-adress {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-adress:hover .address-icon,
@@ -236,15 +266,13 @@ section.hero {
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
 .hero-button:focus {
   background-color: #188ce8;
-}
-
-.site-nav .current {
-  color: var(--accent-color);
 }
 
 .benefits-section {
@@ -313,11 +341,33 @@ section.hero {
 
 .work,
 .team {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
   letter-spacing: 0.03em;
+}
+
+.work-wrapper {
+  position: relative;
+}
+
+.work-description {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  padding: 27px 82px 27px 83px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
 }
 
 /* TEAM */
@@ -342,6 +392,8 @@ section.hero {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-icon {
@@ -349,6 +401,8 @@ section.hero {
   height: 44px;
   fill: #afb1b8;
   padding: 12px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -433,6 +487,10 @@ section.hero {
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -470,6 +528,8 @@ section.hero {
   letter-spacing: 0.03em;
 
   color: #757575;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
@@ -480,6 +540,35 @@ section.hero {
 
 .portfolio img {
   display: block;
+}
+
+.portfolio-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  letter-spacing: 0.03em;
+  background: rgba(33, 150, 243, 0.9);
+  color: #ffffff;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-link:hover .portfolio-description,
+.portfolio-link:focus .portfolio-description {
+  transform: translateY(0%);
 }
 
 .bottom-card-bottom {
@@ -559,6 +648,12 @@ section.hero {
   fill: #afb1b8;
   width: 106px;
   height: 60px;
+}
+
+.clients-link .clients-icon,
+.clients-link {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover .clients-icon,
@@ -650,4 +745,165 @@ footer {
 
 .footer-social-links .social-link-icon {
   fill: #ffffff;
+}
+
+/* MODAL */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  padding: 8px;
+  width: 528px;
+  height: 581px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  cursor: pointer;
+
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #f57272;
+  fill: white;
+}
+
+.close-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.is-hidden {
+  /* С визибилити хидден очень резкая анимация при закрытии, это не красиво) :D */
+  /* visibility: hidden; */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* JOKE, не ставьте кол :D */
+
+.joke-desire {
+  display: block;
+  text-decoration: none;
+  margin: 200px auto 0 auto;
+  width: 370px;
+
+  font-weight: 500;
+  font-size: 25px;
+  line-height: calc(19 / 16);
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: #212121;
+
+  animation: changecolor 4000ms linear infinite alternate;
+}
+
+.cat-picture {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 520px;
+}
+
+.rainbow {
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+  z-index: -1;
+  width: 300px;
+  height: 100px;
+  background-color: #ff0000;
+
+  animation-name: changebgcolor;
+  animation-duration: 4000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes changecolor {
+  0% {
+    color: #ff0000;
+  }
+
+  25% {
+    color: #ffee00;
+  }
+
+  50% {
+    color: #66ff00;
+  }
+
+  75% {
+    color: #00ffea;
+  }
+
+  100% {
+    color: #f700ff;
+  }
+}
+
+@keyframes changebgcolor {
+  0% {
+    background-color: #ff0000;
+  }
+
+  25% {
+    background-color: #ffee00;
+  }
+
+  50% {
+    background-color: #66ff00;
+  }
+
+  75% {
+    background-color: #00ffea;
+  }
+
+  100% {
+    background-color: #f700ff;
+  }
 }

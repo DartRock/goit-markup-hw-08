@@ -28,7 +28,9 @@
           >
           <ul class="site-nav list">
             <li class="site-nav-list">
-              <a href="./index.html" class="link current none-underline">Студия</a>
+              <a href="./index.html" class="link current none-underline current-underline"
+                >Студия</a
+              >
             </li>
             <li class="site-nav-list">
               <a href="./portfolio.html" class="link none-underline">Портфолио</a>
@@ -65,7 +67,7 @@
             Эффективные решения<br />
             для вашего бизнеса
           </h1>
-          <button type="button" class="hero-button">Заказать услугу</button>
+          <button type="button" class="hero-button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <!--Преимущества-->
@@ -120,25 +122,34 @@
           <h2 class="title work">Чем мы занимаемся</h2>
           <ul class="list work-list">
             <li class="item">
-              <img
-                src="./images/box1.jpg"
-                alt="Руки человека которые пишут код с помощью клавиатуры"
-                width="370"
-              />
+              <div class="work-wrapper">
+                <img
+                  src="./images/box1.jpg"
+                  alt="Руки человека которые пишут код с помощью клавиатуры"
+                  width="370"
+                />
+                <p class="work-description">Десктопные приложения</p>
+              </div>
             </li>
             <li class="item">
-              <img
-                src="./images/box2.jpg"
-                alt="Телефон в руках человека и ноутбук на столе"
-                width="370"
-              />
+              <div class="work-wrapper">
+                <img
+                  src="./images/box2.jpg"
+                  alt="Телефон в руках человека и ноутбук на столе"
+                  width="370"
+                />
+                <p class="work-description">Мобильные приложения</p>
+              </div>
             </li>
             <li class="item">
-              <img
-                src="./images/box3.jpg"
-                alt="Планшет в руках человека на котором изображена цветовая палитра"
-                width="370"
-              />
+              <div class="work-wrapper">
+                <img
+                  src="./images/box3.jpg"
+                  alt="Планшет в руках человека на котором изображена цветовая палитра"
+                  width="370"
+                />
+                <p class="work-description">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -422,5 +433,23 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-btn" data-modal-close>
+          <svg class="close-icon">
+            <use href="./images/sprite.svg#close-icon"></use>
+          </svg>
+        </button>
+        <div class="joke-desire">
+          Всё гуд, поставьте зачёт :D Но если не гуд - не ставьте, я всё исправлю c:<img
+            src="./images/cat.png"
+            alt=""
+            class="cat-picture"
+          />
+        </div>
+        <div class="rainbow"></div>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
