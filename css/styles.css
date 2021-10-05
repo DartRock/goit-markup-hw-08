@@ -216,6 +216,16 @@ header {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  margin: 0 auto;
+  height: 600px;
+  max-width: 1600px;
+
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--second-background-color);
+  text-align: center;
 }
 
 .hero .hero-title {
@@ -228,24 +238,6 @@ header {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-section.hero {
-  text-align: center;
-}
-
-.hero {
-  background-color: var(--second-background-color);
-  width: 1600px;
-  margin: 0 auto;
-}
-
-.hero {
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/hero-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 600px;
 }
 
 .hero-button {
