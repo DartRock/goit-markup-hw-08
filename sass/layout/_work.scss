@@ -2,6 +2,10 @@
   padding-bottom: 94px;
   padding-top: 94px;
 
+  @media screen and(min-width: 0px) and (max-width: 1199px) {
+    display: none;
+  }
+
   &__title {
     margin-bottom: 50px;
   }

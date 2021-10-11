@@ -5,15 +5,38 @@
   background-color: #f5f4fa;
 
   &__title {
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   &__list {
-    display: flex;
+    // display: flex;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      display: flex;
+      flex-wrap: wrap;
+      width: 738px;
+    }
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
   }
 
   &__item {
-    width: 270px;
+    // width: 270px;
+    max-width: 450px;
+    max-height: 622px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+
+    @media screen and (min-width: 768px) {
+      width: 354px;
+      height: 536px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+      height: 428px;
+    }
 
     text-align: center;
     background-color: var(--primary-white-color);
@@ -21,19 +44,59 @@
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 
-    &:not(:first-child) {
-      margin-left: 30px;
+    // &:not(:first-child) {
+    //   margin-left: 30px;
+    // }
+
+    @media screen and (max-width: 480px) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      &:nth-child(odd) {
+        margin-right: 30px;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      &:nth-child(-n + 2) {
+        margin-bottom: 30px;
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      &:not(:first-child) {
+        margin-left: 30px;
+      }
     }
   }
 
   &__picture {
     margin-bottom: 30px;
+    width: 100%;
+    height: auto;
+
+    @media screen and (min-width: 768px) {
+      width: 354px;
+      height: 374px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+      height: 260px;
+    }
   }
 
   &__name {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.18;
+    margin-bottom: 10px;
   }
 
   &__role {

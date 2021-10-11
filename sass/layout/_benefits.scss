@@ -1,12 +1,45 @@
 .benefits {
-  padding-top: 94px;
+  padding: 60px 0;
 
-  &__list {
-    display: flex;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
   }
 
-  &__item:not(:first-child) {
-    margin-left: 30px;
+  &__list {
+    // display: flex;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &__item:nth-child(odd) {
+      margin-right: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &__item:nth-child(-n + 2) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__item:not(:first-child) {
+      margin-left: 30px;
+    }
   }
 
   &__title {
@@ -15,12 +48,33 @@
     line-height: 1.14;
     text-transform: uppercase;
     color: var(--title-text-color);
+
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: start;
+    }
   }
 
   &__icon {
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    width: 270px;
+    width: 450px;
     height: 120px;
+
+    @media screen and (max-width: 479px) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+    }
+
     margin-bottom: 30px;
     padding: 25px 100px;
 
@@ -29,6 +83,18 @@
   }
 
   &__text {
-    width: 270px;
+    // width: 270px;
+    margin: 0 auto;
+    width: 450px;
+
+    @media screen and (max-width: 479px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+    }
   }
 }

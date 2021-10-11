@@ -2,9 +2,15 @@
   display: flex;
   width: 206px;
   height: 44px;
-  margin-bottom: 30px;
-  margin-right: 32px;
-  margin-left: 32px;
+  margin: 0 auto;
+
+  // @media screen and (min-width: 768px) {
+  //   margin: 0 74px 24px 74px;
+  // }
+
+  // @media screen and (min-width: 1200px) {
+  //   margin: 0 32px 30px 32px;
+  // }
 
   &__item:not(:last-child) {
     margin-right: 10px;

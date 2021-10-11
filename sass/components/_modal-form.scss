@@ -1,6 +1,13 @@
 .modal-form {
   margin: 12px auto 0 auto;
-  width: 448px;
+  max-width: 448px;
+  @media screen and (min-width: 480px) {
+    min-width: 400px;
+  }
+
+  @media screen and (max-width: 479px) {
+    max-width: 400px;
+  }
 
   &__title {
     font-weight: 700;
@@ -100,6 +107,12 @@
 
     font-weight: normal;
     font-size: 14px;
+
+    @media screen and (max-width: 1199px) {
+      font-size: 12px;
+      line-height: calc(14 / 12);
+    }
+
     line-height: calc(24 / 14);
     letter-spacing: 0.03em;
     color: #757575;

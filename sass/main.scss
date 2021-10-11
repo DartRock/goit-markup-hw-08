@@ -1,6 +1,5 @@
 @import './vendors/vars';
 
-@import './base/reset';
 @import './base/common';
 @import './base/container';
 
@@ -18,3 +17,5 @@
 @import './layout/team';
 @import './layout/clients';
 @import './layout/footer';
+
+@import './base/reset';
